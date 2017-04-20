@@ -73,11 +73,10 @@ echo ${script}
 eval "${script}"
 
 
-ffmpeg -r 1/5 -loop 1 -i m%01d.jpg -i "TuBo-KhacViet-4822135.mp3" -safe 0 -filter_complex "[1:v][0:v]blend=all_expr='A*(if(gte(T,0.9),1,T/0.9))+B*(1-(if(gte(T,0.9),1,T/0.9)))'[b1v]; [0:v][b1v][1:v][v0][v1]concat=n=5:v=1:a=0,format=yuv420p[v]" -map "[v]" -c:v libx264 -pix_fmt yuv420p -c:a copy -shortest video.mp4
+#ffmpeg -r 1/5 -loop 1 -i m%01d.jpg -i "TuBo-KhacViet-4822135.mp3" -safe 0 -filter_complex "[1:v][0:v]blend=all_expr='A*(if(gte(T,0.9),1,T/0.9))+B*(1-(if(gte(T,0.9),1,T/0.9)))'[b1v]; [0:v][b1v][1:v][v0][v1]concat=n=5:v=1:a=0,format=yuv420p[v]" -map "[v]" -c:v libx264 -pix_fmt yuv420p -c:a copy -shortest video.mp4
 
-ffmpeg -r 1/5 -loop 1 -i m1.jpg -loop 1 -i m2.jpg -i "TuBo-KhacViet-4822135.mp3" -safe 0 -c:v libx264 -pix_fmt yuv420p -c:a copy -shortest video.mp4
+#ffmpeg -r 1/5 -loop 1 -i m1.jpg -loop 1 -i m2.jpg -i "TuBo-KhacViet-4822135.mp3" -safe 0 -c:v libx264 -pix_fmt yuv420p -c:a copy -shortest video.mp4
 
-ffmpeg -r 1/5 -loop 1 -i m%01d.jpg -i "TuBo-KhacViet-4822135.mp3" -safe 0 -c:v libx264 -pix_fmt yuv420p -c:a copy -shortest output.mp4
+#ffmpeg -r 1/5 -loop 1 -i m%01d.jpg -i "TuBo-KhacViet-4822135.mp3" -safe 0 -c:v libx264 -pix_fmt yuv420p -c:a copy -shortest output.mp4
 
-
-ffmpeg -r 1/5 -i m%01d.jpg -i "TuBo-KhacViet-4822135.mp3" -c:v libx264 -r 30 -y -pix_fmt yuv420p -c:a copy -shortest slide.mp4
+#ffmpeg -r 1/5 -i m%01d.jpg -i "TuBo-KhacViet-4822135.mp3" -c:v libx264 -r 30 -y -pix_fmt yuv420p -c:a copy -shortest slide.mp4
